@@ -30,11 +30,19 @@ examples lacked and I had to search for a Keysight library to use via linux comm
 Here are different variants of a ResourceManager call that might be useful (choose one):
 
 rm = pyvisa.ResourceManager() # will try default visa library
+
 rm = pyvisa.ResourceManager('@sim')  # uses pyvisa-sim if installed and prints about 15 instruments see pyvisa's default.yaml
+
 rm = pyvisa.ResourceManager('@ivi')  # uses a built in ivi visa library 
+
 rm = pyvisa.ResourceManager('@ni')  # would end up using ni visa resources
+
 rm = pyvisa.ResourceManager('/opt/keysight/iolibs/libktvisa32.so')  # will list keystone visa resources
+
 rm = pyvisa.ResourceManager('/opt/keysight/iolibs/libktvisa32.so.0.0.0') # will list keystone visa resources, file name says32 but ldd reports as 64bit
+
 if using windows try something like: 
+
 rm = pyvisa.ResourceManager('C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\agvisa\\agbin\\visa32.dll')
+
 and I read somewhere that forward slashes are ok instead of double backslashes even for windows, so try that if needed.
