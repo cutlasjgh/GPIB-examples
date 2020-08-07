@@ -34,10 +34,16 @@ rm = pyvisa.ResourceManager('/opt/keysight/iolibs/libktvisa32.so.0.0.0') # says3
 # if using windows try something like: 
 #rm = pyvisa.ResourceManager('C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\agvisa\\agbin\\visa32.dll')
 rmlist = rm.list_resources()
+# print the list of resources, might be more than 1
 print(rmlist)
+# print out the first
 print(rmlist[0])
 
+# open that first instrument
 inst = rm.open_resource(rmlist[0], read_termination='\n')
+# or use these methods to open a particular instrument at interface GPIB1 address 19
+#queryinstr = 'GPIB1::19::INSTR'
+#inst = rm.open_resource(queryinstr, read_termination='')
 
 # query is equiv to write/read 
 # I saw example that tried "?IDN" and thats an error waiting to happen, use "*IDN?" instead of course.
