@@ -46,3 +46,12 @@ if using windows try something like:
 rm = pyvisa.ResourceManager('C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\agvisa\\agbin\\visa32.dll')
 
 and I read somewhere that forward slashes are ok instead of double backslashes even for windows, so try that if needed.
+
+# Files herein:
+
+pyvisa-queryMXG.py - uses pyvisa to try to query a real instrument served by Keysight visa resource manager
+
+pysim-test1.py - uses pyvisa-sim and it's built in simulated resource to print a simulated instrument's information
+
+
+
