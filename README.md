@@ -1,14 +1,14 @@
 # GPIB-examples
-GPIB aka IEEE-4888 using pyvisa via VISA libraries such as Keysight IO and National Instruments NI
+GPIB aka IEEE-4888 using pyvisa and VISA libraries such as Keysight IO and National Instruments NI
 
-this is a year 2020 example that works under Centos 7 and should work under modern UBuntu etc.
+I created this repo because getting GPIB working over a Keysight LAN to GPIB Gateway was not easy with most examples using NI-visa, which is not compatible when using Linux (though it may be with windows and the NI Tulip dll ).  
 
-I had trouble finding how to use Keysight Visa libraries, as most people use NI National Instruments it seems.
+This is a year 2020 example that works under Centos 7 and should work under modern UBuntu etc.
 
 Bottom line is minimum you probably have to do is install visa libraries that are from the SAME manufacturer as your interface card or gateway.
-example, if you have a keysight E5810A or B LAN/GPIB gateway then you install Keysight IO libraries..
-If you have a NI USB to GPIB conveter, then install NI libraries. 
-Both libraries can be installed at same time, and they coexist. The default is usually the first installed.
+For example, In my case, I have a Keysight E5810A LAN/GPIB gateway so I had to install Keysight IO libraries in my Linux system.
+If you have a NI USB to GPIB conveter, then you must install NI libraries provided by the interface's manufacturer. 
+Both libraries can be installed at same time, and they coexist. The default is usually the first installed, but on Linux you typically use the compitble Vendor's library to get talking through the interface card or gateway to the instrument.
 
 you can get Keysight IO libraries from
 https://www.keysight.com/main/software.jspx?ckey=2175637&nid=-32390.536881830&cc=eng&lc=eng
